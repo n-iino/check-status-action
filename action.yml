@@ -1,11 +1,25 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: check-status-action
+description: 'send check status'
+author: 'n-iino'
 inputs:
-  milliseconds: # change this
+  github-token:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: 'github token'
+  name:
+    required: true
+    description: 'name of job'
+  status:
+    required: true
+  conclusion:
+    required: true
+  run-title:
+    required: false
+  summary:
+    required: false
+  detailsUrl:
+    required: false
+  head-sha:
+    required: false
 runs:
   using: 'node12'
   main: 'dist/index.js'
